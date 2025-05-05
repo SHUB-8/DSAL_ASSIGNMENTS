@@ -57,7 +57,7 @@ public:
         }
     }
 
-    void primMST()
+    void prims_MST()
     {
         vector<int> key(v, INT_MAX);
         vector<bool> inMST(v, false);
@@ -187,7 +187,7 @@ int main()
             break;
 
         case 4:
-            g.primMST();
+            g.prims_MST();
             break;
 
         case 5:
