@@ -161,13 +161,13 @@ public:
     {
         if (this == &other)  
             return *this;
-        
+        deleteTree(root);
         root = copyTree(other.root);
         return *this;
     }
 
 
-    void deleteTree(Node*& root)
+    void deleteTree(Node* root)
     {
         if (root == nullptr)
         {
@@ -176,7 +176,6 @@ public:
         deleteTree(root->left);
         deleteTree(root->right);
         delete root;
-        root = nullptr;
     }
     
     void del()
