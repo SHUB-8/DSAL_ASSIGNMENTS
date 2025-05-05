@@ -349,16 +349,6 @@ public:
         }
     }
 
-    // void postorder(Node *root)
-    // {
-    //     if(root == nullptr)
-    //     {
-    //         cout<<"Binary Search Tree is Empty!!!\n";
-    //         return;
-    //     }
-
-    // }
-
 
 };
 
