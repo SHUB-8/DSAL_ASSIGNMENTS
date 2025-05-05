@@ -69,6 +69,7 @@ public:
         cout << "\nTelephone Book (Hash Table Representation):\n";
         for (int i = 0; i < n; i++)
         {
+            cout<<"["<<i<<"] :: "<<arr[i]<<" : "<<arr1[i]<<endl;
         }
     }
            
