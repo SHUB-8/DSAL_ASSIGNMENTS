@@ -110,53 +110,60 @@ public:
 
     void heap_sort_max()
     {
-        vector<int> v;
-        int count=1;
-        cout<<"Array elements are: ",printHeap();
-        cout<<"\n";
-        while(arr.size()!=1)
+        vector<int> sorted;
+        int count = 1;
+        int n = arr.size();
+    
+        buildMaxHeap();
+    
+        for (int i = n - 1; i >= 1; i--)
         {
-            swap(arr[0]->data,arr[arr.size()-1]->data);
-            v.push_back(arr[arr.size()-1]->data);
-            arr.pop_back();
-            buildMaxHeap();
-            cout<<"Pass "<<count<<" : ",printHeap();
-            count+=1;
+            swap(arr[0]->data, arr[i]->data);
+            sorted.push_back(arr[i]->data);
+            heapify(0, i);
+    
+            cout << "Pass " << count << " : ";
+            for (int j = 0; j < i; j++)
+                cout << arr[j]->data << " ";
+            cout << "\n";
+            count++;
         }
-        v.push_back(arr[arr.size()-1]->data);
-
-        cout<<"\nSorted Array is: ";
-        for(int i=v.size()-1;i>=0;i--)
-        {
-            cout<<v[i]<<" ";
-        }
-        cout<<"\n";
+    
+        sorted.push_back(arr[0]->data);
+        cout << "\nSorted Array is: ";
+        for (int i = sorted.size() - 1; i >= 0; i--)
+            cout << sorted[i] << " ";
+        cout << "\n";
     }
 
     void heap_sort_min()
     {
-        vector<int> v;
-        int count=1;
-        cout<<"Array elements are: ",printHeap();
-        cout<<"\n";
-        while(arr.size()!=1)
+        vector<int> sorted;
+        int count = 1;
+        int n = arr.size();
+    
+        buildMinHeap();
+    
+        for (int i = n - 1; i >= 1; i--)
         {
-            swap(arr[0]->data,arr[arr.size()-1]->data);
-            v.push_back(arr[arr.size()-1]->data);
-            arr.pop_back();
-            buildMinHeap();
-            cout<<"Pass "<<count<<" : ",printHeap();
-            count+=1;
+            swap(arr[0]->data, arr[i]->data);
+            sorted.push_back(arr[i]->data);
+            min_heapify(0, i);
+    
+            cout << "Pass " << count << " : ";
+            for (int j = 0; j < i; j++)
+                cout << arr[j]->data << " ";
+            cout << "\n";
+            count++;
         }
-        v.push_back(arr[arr.size()-1]->data);
-
-        cout<<"\nSorted Array is: ";
-        for(int i=0;i<v.size();i++)
-        {
-            cout<<v[i]<<" ";
-        }
-        cout<<"\n";
+    
+        sorted.push_back(arr[0]->data);
+        cout << "\nSorted Array is: ";
+        for (int val : sorted)
+            cout << val << " ";
+        cout << "\n";
     }
+
 };
 
 int main()
